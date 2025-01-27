@@ -1,7 +1,6 @@
 kubectl auth can-i delete pod --as=system:serviceaccount:default:myserviceaccount
-kubectl describe cluster-info
+kubectl cluster-info
 kubectl config set-cluster mycluster --server=     --insecure-skip-tls-verify=true
 kubectl config set-credentials mycredentials --token=
 kubectl config set-context mycontext --cluster=mycluster --user=myserviceaccount
 kubectl config use-context mycontext
-kubectl describe cluster-info
