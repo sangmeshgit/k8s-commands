@@ -4,4 +4,4 @@ kubectl config set-cluster mycluster --server=     --insecure-skip-tls-verify=tr
 kubectl config set-credentials myserviceaccount --token=
 kubectl config set-context mycontext --cluster=mycluster --user=myserviceaccount
 kubectl config use-context mycontext
-kubectl cluster-info cat
+kubectl cluster-info dump
