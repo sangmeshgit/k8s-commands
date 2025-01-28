@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myservice
+spec:
+  ClusterIP: none
+  selector:
+    matchLabels:
+      apt: tomcat
+  ports:
+    port: 30002
+    targetPort: 8080
