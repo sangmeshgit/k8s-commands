@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mypvclaim
+spec:
+  storageClassName: local
+  accessModes:
+  - ReadWriteMany
+  resource:
+    request:
+      storage: 1Gi
