@@ -6,6 +6,6 @@ spec:
   storageClassName: local
   accessModes:
   - ReadWriteMany
-  resource:
-    request:
+  resources:
+    requests:
       storage: 1Gi
