@@ -1,0 +1,25 @@
+1) Install ArgoCD
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+2) install ArgoCD CLI
+curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+rm argocd-linux-amd64
+
+3) Access The ArgoCD API Server
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+
+4) Login to argocd with user - "admin"
+   To get password:
+      argocd admin initial-password -n argocd
+
+5) Register a cluster to deploy apps
+  a) Login to argocd from cli
+       argocd login <server_ip>:<server:port>
+  b) Add kube-config to add to argocd
+       Get the kube-context to add to argocd
+         kubectl config get-contexts -o name
+       Add context to argocd
+         argocd cluster add <context_name>
+
