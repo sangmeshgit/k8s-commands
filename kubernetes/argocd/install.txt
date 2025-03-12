@@ -16,7 +16,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 
 5) Register a cluster to deploy apps
   a) Login to argocd from cli
-       argocd login <server_ip>:<server:port>
+       argocd login <server_ip>:<server_port>
   b) Add kube-config to add to argocd
        Get the kube-context to add to argocd
          kubectl config get-contexts -o name
