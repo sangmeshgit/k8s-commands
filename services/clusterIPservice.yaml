@@ -5,8 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    matchLabels:
-      apt: tomcat
+    app: tomcat
   ports:
-    port: 30002
-    targetPort: 8080
+    - port: 30000
+      targetPort: 8080

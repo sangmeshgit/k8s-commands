@@ -13,8 +13,8 @@ spec:
         app: tomcat
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name: ipapp
+        image: harshajain/ip_app
         ports:
         - containerPort: 80
 
