@@ -3,18 +3,17 @@ kind: Deployment
 metadata:
   name: mydeployment
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
-      app: ip-app
+      app: tomcat
   template:
     metadata:
       labels:
-        app: ip-app
+        app: tomcat
     spec:
       containers:
       - name: ipapp
-        image: harshajain/ip_app:latest
+        image: harshajain/ip_app
         ports:
-        - containerPort: 8080
-
+        - containerPort: 80
