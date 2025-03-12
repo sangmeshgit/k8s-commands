@@ -10,5 +10,5 @@ spec:
   ports:
   - nodePort: 30002
     port:  30000
-    targetPort: 8080 
+    targetPort: 80
 
