@@ -1,0 +1,5 @@
+1. https://github.com/kubernetes-sigs > repositories > aws-ebs-csi-driver > docs > install.md
+
+2. kubectl create secret generic aws-secret    --namespace kube-system   --from-literal "key_id=${AWS_ACCESS_KEY_ID_}"    --from-literal "access_key=${AWS_SECRET_ACCESS_KEY}"
+
+3. kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.40"

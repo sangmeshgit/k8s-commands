@@ -1,0 +1,7 @@
+1. kubernetes-sigs > repositories > metrics-server
+ 
+2. kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+3. kubectl top pod
+
+4. kubectl top nodes

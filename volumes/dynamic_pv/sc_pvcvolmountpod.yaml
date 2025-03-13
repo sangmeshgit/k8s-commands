@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sc-pvcvolmountpod
+spec:
+  containers:
+  - name: sc-pvcvolmountcontainer
+    image: harshajain/ip_app
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: pvc-vol
+      mountPath: /app/pvc-volume
+  volumes:
+  - name: sc-pvc-vol
+    persistentVolumeClaim:
+      claimName: my-pvc-ebs
