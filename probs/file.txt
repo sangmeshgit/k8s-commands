@@ -1,0 +1,38 @@
+* liveness probe: checks weather application is live or not if not it restarts pod
+* readiness probe: checks weather application is ready to take traffic or not if not it redirects the traffic to another container
+* informational responce (100 - 199)
+  sucessful responce (200 - 299)
+  redirection messages (300 - 399)
+  client error responce (400 - 499)
+  server error responce (500 - 599)
+* http 
+     host: (default host will be the ip of the same pod)
+     path: /
+  tcp
+    port : 9090
+   
+    ex: 
+       host: localhost
+       port: 9090
+       path: /login?from=%2F
+
+
+       host: itdefined.org
+       path: /aws-devops/
+
+  localhost:9090
+* postman app install to check get request
+* kubectl rollout --help
+
+* intialSecoundsDelay:
+    default value is 10
+    minium 1 second
+  periodSecound:
+    default value is 10
+    minium 1 second
+  timeoutSecond: 10
+  failureThreshold:
+  sucessThreshold:
+
+* to give a delay for all the probs in container we use startupProbe
+  to give a delay for all the containers in a pod, we use initContainer 

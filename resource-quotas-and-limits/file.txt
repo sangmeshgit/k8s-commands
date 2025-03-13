@@ -1,0 +1,7 @@
+* icpu ink8s = 100% / core
+  
+  0.1,0.2,0.3,0.4
+ 
+  50% of cpu = 0.5
+ 
+  0.1 = 100m = 1 hundred milli cpu

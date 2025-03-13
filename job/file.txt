@@ -1,0 +1,17 @@
+* restartPolicy
+  a. always
+  b. OnFailure
+  c. Never
+
+* Common Fields
+    backoffLimit: 
+    parallelism: 
+    completions: 
+    activeDeadlineSeconds:
+
+* Suspend an active Job:
+    kubectl patch job/myjob --type=strategic --patch '{"spec":{"suspend":true}}'
+
+  Resume a suspended Job:
+    kubectl patch job/myjob --type=strategic --patch '{"spec":{"suspend":false}}'  
+ 

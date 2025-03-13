@@ -1,0 +1,8 @@
+* types of containers
+ a. init container
+ b. app container
+ c. sidecar container
+ 
+* sidecar types
+ a. adaptor: gathers logs and feed it to the monitoring tools or s3 bucket
+ b. ambassador: if a app container needs a database connection, we use ambassador container(sidecar container)
