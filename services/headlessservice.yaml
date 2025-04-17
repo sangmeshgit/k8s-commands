@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myservice
+  name: myheadlessservice
 spec:
-  ClusterIP: none
+  clusterIP: None
   selector:
-    matchLabels:
-      apt: tomcat
+      app: tom
   ports:
-    port: 30002
-    targetPort: 8080
+  - port: 30003
+    targetPort: 80
