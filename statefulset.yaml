@@ -1,20 +1,20 @@
 apiVersion: apps/v1
-kind: StatefullSet
+kind: StatefulSet
 metadata:
-  name: mystatefullset
+  name: mystatefulset
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
-      app: tomcat
+      app: tom
   template:
     metadata:
       labels:
-        app: tomcat
+        app: tom
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name: ip-app
+        image: sangmeshbhure/ip_app
         ports:
         - containerPort: 80
 
