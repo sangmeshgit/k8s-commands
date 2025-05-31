@@ -1,0 +1,13 @@
+Helm installation
+1) curl -O https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
+2) tar xvf helm-v3.16.2-linux-amd64.tar.gz
+3) sudo mv linux-amd64/helm /usr/local/bin
+4) sudo mv linux-amd64/helm /usr/local/bin
+5) rm helm-v3.16.2-linux-amd64.tar.gz && rm -rf linux-amd64
+6) helm version
+
+kubectl installation
+1) curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+2) chmod +x ./kubectl
+3) sudo mv ./kubectl /usr/local/bin
+4) kubectl version --short --client
