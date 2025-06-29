@@ -33,3 +33,13 @@ sudo mv sonar-scanner-4.7.0.2747-linux /var/opt
 nexus installation
 
 docker run -d --name Nexus -p 8081:8081 sonatype/nexus3
+===========================================================================================
+trivy installation
+
+sudo apt-get install wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update
+sudo apt-get install trivy
+
+
