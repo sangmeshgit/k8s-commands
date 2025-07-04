@@ -10,14 +10,14 @@ spec:
   - host: ingress.example.com    
     http:
       paths:
-      - path: /
+      - path: /name
         pathType: Prefix
         backend:
           service:
             name: cip-ipapp
             port:
               number: 30002
-      - path: /name
+      - path: /health
         pathType: Prefix
         backend:
           service:
