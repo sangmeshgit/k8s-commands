@@ -16,7 +16,7 @@ spec:
       - name: ipapp
         image: harshajain/ip-app
         ports:
-        - container: 80
+        - containerPort: 80
 
 ---
 apiVersion: v1
