@@ -22,4 +22,25 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
          kubectl config get-contexts -o name
        Add context to argocd
          argocd cluster add <context_name>
+=============================================================================
+user management
+1) kubectl edit cm argocd-cm -n argocd
+   data:
+     accounts.sangmesh: apikey,login
+     account.sneha: apikey,login
+     account.bhure: apikey,login
+2) argocd account update-password --account sangmesh
+3) kubectl edit cm argocd-rbac-cm -n argocd
+   apiVersion: v1
+   data:
+     policy.csv: |
+       p, role:devops, applications, *, *, allow
+       p, role:developer, applications, get, *, allow
+       g, sangmesh, role:devops
+       g, sneha, role:developer
+       g, bhure, role:admin
+   kind: ConfigMap
+4) argocd login 20.30.245.3 --username admin --insecure
+5) argocd app list
+6) argocd account list
 
