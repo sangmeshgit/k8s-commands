@@ -27,8 +27,8 @@ user management
 1) kubectl edit cm argocd-cm -n argocd
    data:
      accounts.sangmesh: apikey,login
-     account.sneha: apikey,login
-     account.bhure: apikey,login
+     accounts.sneha: apikey,login
+     accounts.bhure: apikey,login
 2) argocd account update-password --account sangmesh
 3) kubectl edit cm argocd-rbac-cm -n argocd
    apiVersion: v1
