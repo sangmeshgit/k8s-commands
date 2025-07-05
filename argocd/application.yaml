@@ -6,7 +6,7 @@ metadata:
 spec:
   project: itd-k8s
   source:
-    repoURL: https://github.com/sangmeshgit/k8s-commands.git
+    repoURL: https://github.com/sangmeshgit/sample.git
     targetRevision: main
     path: kubernates/argocd/kube_configs
   destination:
