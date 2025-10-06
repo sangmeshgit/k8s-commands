@@ -50,3 +50,10 @@ sudo sh get-docker.sh
 sudo rm -rf get-docker.sh
 docker --version
 
+Installation of Metrics Server on Kind
+curl -LO https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml  
+vi components.yaml  In the container args section, add:  - --kubelet-insecure-tls  and - --kubelet-preferred-address-types=InternalIP 
+kubectl apply -f components.yaml
+kubectl top nodes
+kubectl top pods
+
