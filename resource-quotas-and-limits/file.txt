@@ -1,4 +1,4 @@
-* icpu in k8s = 100% / core
+* 1 cpu in k8s = 100% / core
   
   0.1,0.2,0.3,0.4
  
