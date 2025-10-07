@@ -5,7 +5,7 @@
   d. Find the helm binary in the unpacked directory, and move it to its desired destination (mv linux-amd64/helm /usr/local/bin/helm)
   e. chmod 755 /usr/local/bin/helm
 
-2. https://docs.nginx.com/nginx-ingress-controller/ > helm install ingress-nginx oci://ghcr.io/nginx/charts/nginx-ingress --version 2.0.1 --set controller.kind=daemonset --set rbac.create=true
+2. https://docs.nginx.com/nginx-ingress-controller/ > helm install ingress-nginx oci://ghcr.io/nginx/charts/nginx-ingress --version 2.3.0 --set controller.kind=daemonset --set rbac.create=true
 
 3. helm list
 
