@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: hostpathvolmountcontainer  
-    image: harshajain/ip_app
+    image: sangmeshbhure/ip_app
     ports:
       containerPort: 80
     volumeMounts:
