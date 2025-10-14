@@ -59,7 +59,7 @@ kubectl top pods
 
 SQL installation on ubuntu
 https://www.mysql.com/ >> https://www.mysql.com/downloads/ >> https://dev.mysql.com/downloads/mysql/ >> https://dev.mysql.com/downloads/file/?id=543701 >> wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.43-1ubuntu24.04_amd64.deb-bundle.tar
-tar -xvf https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.43-1ubuntu24.04_amd64.deb-bundle.tar
+tar -xvf MySQL-8.0/mysql-server_8.0.43-1ubuntu24.04_amd64.deb-bundle.tar
 sudo apt-get install libaio-dev mecab-ipadic-utf8
 sudo  dpkg -i *.deb
 sudo systemctl status mysql
