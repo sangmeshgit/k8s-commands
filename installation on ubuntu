@@ -11,7 +11,7 @@ kubectl installation:
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
-kubectl version --short --client
+kubectl version --client
 ----------------------------
 sudo apt-get update 
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
@@ -44,7 +44,7 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update
 sudo apt-get install jenkins -y
 
-docker inatallation
+docker installation
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo rm -rf get-docker.sh
@@ -58,9 +58,12 @@ kubectl top nodes
 kubectl top pods
 
 SQL installation on ubuntu
-https://www.mysql.com/ >> https://www.mysql.com/downloads/ >> https://dev.mysql.com/downloads/mysql/ >> https://dev.mysql.com/downloads/file/?id=543701 >> wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.43-1ubuntu24.04_amd64.deb-bundle.tar
-tar -xvf mysql-server_8.0.43-1ubuntu24.04_amd64.deb-bundle.tar
-sudo apt-get install libaio-dev mecab-ipadic-utf8
-sudo  dpkg -i *.deb
-sudo systemctl status mysql
-mysql -u root -p
+sudo apt install mysql-server
+
+minikube installation on ubuntu
+Prerequisites:Ubuntu 22.04 or 20.04, 2CPUs or more, 2GB+ RAM, 20GB+ disk space, Docker and kubectl
+sudo apt update && sudo apt upgrade -y
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start --driver=docker
+kubectl get nodes
