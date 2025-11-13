@@ -69,3 +69,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start --driver=docker
 kubectl get nodes
+
+splunk installation on ubuntu
+docker run -d \
+  -p 8000:8000 -e SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=StrongPassword splunk/splunk:latest
