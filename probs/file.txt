@@ -34,5 +34,5 @@
   failureThreshold:
   sucessThreshold:
 
-* to give a delay for all the probs in container we use startupProbe
+* to give a delay for all the probs in a container we use startupProbe
   to give a delay for all the containers in a pod, we use initContainer 
