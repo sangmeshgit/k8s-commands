@@ -1,0 +1,53 @@
+#Installation
+kind create cluster --name my-cluster --config=<(cat <<EOF
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  image: kindest/node:v1.34.0
+  extraPortMappings:
+  - containerPort: 30001
+    hostPort: 30001
+    protocol: TCP
+- role: worker
+  image: kindest/node:v1.34.0
+- role: worker
+  image: kindest/node:v1.34.0
+EOF
+)
+
+#Install MetalLB in your Kind cluster
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.10/config/manifests/metallb-native.yaml
+
+# Configure an IP address pool (usually from Docker’s network range):
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: default
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.18.255.200-172.18.255.250
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: default
+  namespace: metallb-system
+
+#LoadBalancer service:
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-app
+  ports:
+  - port: 80
+    targetPort: 8080
+
+#Use kubectl port-forward(simpler, but not a real LB)
+• 	Forward traffic from your local machine to the service/pod:
+kubectl port-forward svc/my-service 8080:80
