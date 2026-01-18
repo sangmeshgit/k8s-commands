@@ -17,14 +17,17 @@ apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
   image: kindest/node:v1.34.0
+- role: worker
+  image: kindest/node:v1.34.0
+- role: worker
+  image: kindest/node:v1.34.0
   extraPortMappings:
-  - containerPort: 30001
-    hostPort: 30001
+  - containerPort: 80
+    hostPort: 80
     protocol: TCP
-- role: worker
-  image: kindest/node:v1.34.0
-- role: worker
-  image: kindest/node:v1.34.0
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
 EOF
 )
 
@@ -51,15 +54,15 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: myLB-svc
 spec:
   type: LoadBalancer
   selector:
-    app: my-app
+    app: tom
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 80
 
 #Use kubectl port-forward(simpler, but not a real LB)
 • 	Forward traffic from your local machine to the service/pod:
-kubectl port-forward svc/my-service 8080:80
+kubectl port-forward svc/my-service 90:80 --address=0.0.0.0
