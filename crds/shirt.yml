@@ -1,0 +1,10 @@
+apiVersion: stable.example.com/v1
+kind: Shirt
+metadata:
+  name: red-shirt
+  labels:
+    color: red
+    size: medium
+spec:
+  color: red
+  size: medium
