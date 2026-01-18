@@ -1,0 +1,17 @@
+# Installation
+
+### Intall Gateway API CRDs and ENVOY Gateway
+
+```
+helm install eg oci://docker.io/envoyproxy/gateway-helm --version v1.6.1 -n envoy-gateway-system --create-namespace
+```
+
+### Check the status
+
+```
+kubectl wait --timeout=5m -n envoy-gateway-system deployment/envoy-gateway --for=condition=Available
+```
+
+
+kubectl port-forward  service/envoy-default-eg-e41e7b31 -n envoy-gateway-system 9090:80 --address 0.0.0.0
+curl -v --header "Host: www.example.com" http://localhost:9090/get
