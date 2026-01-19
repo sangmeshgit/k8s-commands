@@ -2,7 +2,7 @@ chart.yml, values.yml, templates, charts             --set image=sangmeshbhure/i
 
 
 helm repo list
-          add <reponame> <repo url>
+          add <reponame> <repo url> =~ helm repo add bitnami https://charts.bitnami.com/bitnami
           remove <reponame>
           update
           index .
