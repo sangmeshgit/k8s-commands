@@ -1,0 +1,18 @@
+chart.yml, values.yml, templates, charts             --set image=sangmeshbhure/ip_app
+
+
+helm repo list
+          add <reponame> <repo url>
+          remove <reponame>
+          update
+          index .
+
+ 
+helm ls
+helm search repo <reponame>
+
+
+helm create <chart_name>
+helm package <chart_name>
+helm install <release_name> <repo_name/chart_name>
+helm uninstall <release_name>
