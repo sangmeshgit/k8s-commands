@@ -1,31 +1,33 @@
-Download Link: https://dev.to/
+#Download Link: https://dev.to/
 
-Helm installation:
+#Helm installation:
 wget https://get.helm.sh/helm-v4.0.0-linux-amd64.tar.gz
 tar -zxvf helm-v4.0.0-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm
 rm helm-v4.0.0-linux-amd64.tar.gz && rm -rf linux-amd64
 helm version
 
-kubectl installation:
+#kubectl installation:
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version --client
 
-AWS cli installation:
+#AWS cli installation:
 sudo apt update && sudo apt install -y unzip curl
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 rm -rf awscliv2.zip aws && aws --version
+---------------------------------------------
+sudo snap install aws-cli --classic
 
-kops installation:
+#kops installation:
 wget -O kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
 chmod +x kops
 sudo mv kops /usr/local/bin/
 
-jenkins installation
+#jenkins installation
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
@@ -34,23 +36,25 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update
 sudo apt-get install jenkins -y
 
-docker installation
+#docker installation
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo rm -rf get-docker.sh
 docker --version
+----------------------------
+sudo apt install docker.io
 
-Installation of Metrics Server on Kind-cluster
+#Installation of Metrics Server on Kind-cluster
 curl -LO https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml  
 vi components.yaml  In the container args section, add:  - --kubelet-insecure-tls  and - --kubelet-preferred-address-types=InternalIP 
 kubectl apply -f components.yaml
 kubectl top nodes
 kubectl top pods
 
-SQL installation on ubuntu
+#SQL installation on ubuntu
 sudo apt install mysql-server
 
-minikube installation on ubuntu
+#minikube installation on ubuntu
 Prerequisites:Ubuntu 22.04 or 20.04, 2CPUs or more, 2GB+ RAM, 20GB+ disk space, Docker and kubectl
 sudo apt update && sudo apt upgrade -y
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -58,6 +62,6 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start --driver=docker
 kubectl get nodes
 
-splunk installation on ubuntu
+#splunk installation on ubuntu
 docker run -d \
   -p 8000:8000 -e SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=StrongPassword splunk/splunk:latest
