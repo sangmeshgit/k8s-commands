@@ -3,6 +3,7 @@ kubectl cluster-info
 kubectl config set-cluster mycluster --server=     --insecure-skip-tls-verify=true
 kubectl config set-credentials myserviceaccount --token=
 kubectl config set-context mycontext --cluster=mycluster --user=myserviceaccount
+kubectl config get-contexts
 kubectl config use-context mycontext
 kubectl cluster-info dump
 
