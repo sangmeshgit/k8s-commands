@@ -5,3 +5,7 @@ kubectl config set-credentials myserviceaccount --token=
 kubectl config set-context mycontext --cluster=mycluster --user=myserviceaccount
 kubectl config use-context mycontext
 kubectl cluster-info dump
+
+kubectl <command_name ex:rollout> --help
+kubectl api-resource | grep -i <resource_name ex:pdb>
+kubectl explain <resource_name ex:pod>
