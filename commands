@@ -12,3 +12,4 @@ kubectl api-resource | grep -i <resource_name ex:pdb>
 kubectl explain <resource_name ex:pod>.<any_field ex:spec>
 kubectl cordon <node_name>    explain:it will not allow any resource to deploy now on that node
 kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data
+kubectl port-forward service/<service-name> 5000:8080 --address=0.0.0.0 &
