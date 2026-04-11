@@ -34,7 +34,7 @@ sudo mv kops /usr/local/bin/
 
 # Java 21 installation
 sudo apt update
-sudo apt install fontconfig openjdk-21-jre
+sudo apt install fontconfig openjdk-21-jre -y
 java -version
 
 # jenkins installation
